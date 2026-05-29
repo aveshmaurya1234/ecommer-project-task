@@ -1,0 +1,22 @@
+{
+  "name": "e-commerce-task",
+  "version": "1.0.0",
+  "description": "ecommerce-api/\r ├── config/              # Database connection and environment variables\r │   └── db.js\r ├── controllers/         # Business logic for requests\r │   ├── categoryController.js\r │   └── productController.js\r ├── middlewares/         # Authentication and file upload handlers\r │   ├── authMiddleware.js\r │   └── uploadMiddleware.js\r ├── models/              # Database schemas\r │   ├── Category.js\r │   └── Product.js\r ├── routes/              # Route definitions linking to controllers\r │   ├── categoryRoutes.js\r │   └── productRoutes.js\r ├── uploads/             # Directory where uploaded images will be stored\r ├── .env                 # Environment secrets (JWT, DB URI, Port)\r ├── package.json         # Project dependencies\r └── server.js            # Main application entry point",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.3",
+    "multer": "^2.1.1"
+  }
+}
