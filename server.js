@@ -1,4 +1,7 @@
 import app from "./src/app.js";
+import connectDB from "./src/config/db.js"
+
+await connectDB()
 
 
 let port = process.env.PORT || 5000;
