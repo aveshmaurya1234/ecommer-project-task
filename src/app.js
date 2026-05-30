@@ -3,6 +3,7 @@ import "dotenv/config";
 // dotenv.config();
 import express from "express";
 import productRoutes from "./routes/product.routes.js";
+import authRoutes from "./routes/user.routes.js";
 import cookieparser from "cookie-parser";
 
 const app = express();
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
     res.status(200).send("Welcome to E-Commerce API");
 });
 app.use("/api/products", productRoutes);
+app.use("/api/auth", authRoutes);
 
 
 export default app;
