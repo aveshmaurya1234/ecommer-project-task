@@ -3,8 +3,10 @@ import "dotenv/config";
 // dotenv.config();
 import express from "express";
 import productRoutes from "./routes/product.routes.js";
+import cookieparser from "cookie-parser";
 
 const app = express();
+app.use(cookieparser());
 
 // middlewares
 // handel json data
