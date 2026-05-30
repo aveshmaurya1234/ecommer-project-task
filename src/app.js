@@ -7,8 +7,16 @@ import productRoutes from "./routes/product.routes.js";
 const app = express();
 
 // middlewares
-app.use(express.json());
+// handel json data
+app.use(express.json())
+// handel form data 
+app.use(express.urlencoded({extended: true}))
+app.use(express.static("public")) // for serve static files like images
 
+// routes
+app.get("/", (req, res) => {
+    res.status(200).send("Welcome to E-Commerce API");
+});
 app.use("/api/products", productRoutes);
 
 

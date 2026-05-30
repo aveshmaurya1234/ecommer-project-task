@@ -1,5 +1,4 @@
 import express from "express";
-import authMiddleware from "../middlewares/auth.middleware.js";
 import upload from "../middleware/multer.js";
 import {
     createProduct,
