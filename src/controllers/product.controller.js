@@ -10,9 +10,9 @@ const createProduct = async (req, res) => {
         const imageUrls = req.files.map(file => file.path);
 
         // --- Validation ---
-        if (!name || !price) {
+        if (!name || !price || !category || imageUrls.length === 0) {
             return res.status(400).json({
-                message: "Name and price are required",
+                message: "Name, price, category, and images are required",
             });
         }   
 
@@ -50,7 +50,7 @@ const createProduct = async (req, res) => {
 const getAllProducts = async (req, res) => {
     try {
 
-        // category filtering
+        // default no filter, get all products // const filter = {category: req.query.category} // if category is present in query params then filter by category
         const filter = {}; 
 
         if (req.query.category) {
@@ -91,9 +91,9 @@ const updateProduct = async (req, res) => {
             return res.status(400).json({ error: "Invalid ID format" });
         }
         
-        if (!name || !price) {
+        if (!name || !price || !category) {
             return res.status(400).json({
-                message: "Name and price are required",
+                message: "Name, price, and category are required",
             });
         }
 

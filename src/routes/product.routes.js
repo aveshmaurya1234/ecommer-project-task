@@ -41,7 +41,7 @@ router.get("/:id", getProductById);
  * @desc Update a product by ID, can update name, description, price, category and images (images should be sent in form-data)
  * @access Public
  */
-router.put("/:id", updateProduct);
+router.put("/:id", updateProduct); 
 
 
 /**

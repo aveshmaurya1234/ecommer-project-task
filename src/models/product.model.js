@@ -18,11 +18,13 @@ const productSchema = new mongoose.Schema(
 
         category: {
             type: String,
+            required: true,
         },
 
         images: {
             type: [String],
             default: [],
+            required: true,
         },
     },
     {
