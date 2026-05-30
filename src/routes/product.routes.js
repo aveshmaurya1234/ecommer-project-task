@@ -1,5 +1,6 @@
 import express from "express";
 import upload from "../middleware/multer.js";
+import authMiddleware from "../middleware/auth.middleware.js";
 import {
     createProduct,
     getAllProducts,
@@ -17,7 +18,7 @@ const router = express.Router();
  * @desc Create a new product need name and price in the request body and images in form-data
  * @access Public
  */
-router.post("/", upload.array("images", 5), createProduct);
+router.post("/", authMiddleware, upload.array("images", 5), createProduct);
 
 
 /**
@@ -41,7 +42,7 @@ router.get("/:id", getProductById);
  * @desc Update a product by ID, can update name, description, price, category and images (images should be sent in form-data)
  * @access Public
  */
-router.put("/:id", updateProduct); 
+router.put("/:id", authMiddleware, updateProduct); 
 
 
 /**
@@ -49,6 +50,6 @@ router.put("/:id", updateProduct);
  * @desc Delete a product by ID
  * @access Public
  */
-router.delete("/:id", deleteProduct );
+router.delete("/:id", authMiddleware, deleteProduct );
 
 export default router;
