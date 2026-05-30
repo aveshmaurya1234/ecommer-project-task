@@ -6,6 +6,8 @@ import ProductModel from "../models/product.model.js";
 const createProduct = async (req, res) => {
     try {
         const { name, description, price, category } = req.body;
+        // multiple uploaded images
+        const imageUrls = req.files.map(file => file.path);
 
         // --- Validation ---
         if (!name || !price) {
@@ -26,8 +28,6 @@ const createProduct = async (req, res) => {
             });
         }
 
-        // multiple uploaded images
-        const imageUrls = req.files.map(file => file.path);
 
         const product = await ProductModel.create({
             name, description, price, category, images: imageUrls,
