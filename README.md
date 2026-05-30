@@ -95,3 +95,46 @@ Use `form-data` and send:
 * images
 
 ---
+
+ecommerce-product-api/
+│
+├── src/
+│
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── controllers/
+│   │   ├── user.controller.js
+│   │   └── product.controller.js
+│   │
+│   ├── middlewares/
+│   │   ├── auth.middleware.js
+│   │   └── multer.js
+│   │
+│   ├── models/
+│   │   ├── user.model.js
+│   │   └── product.model.js
+│   │
+│   ├── routes/
+│   │   ├── user.routes.js
+│   │   └── product.routes.js
+│   │
+│   │
+│   ├── utils/
+│   │   ├── generateToken.js
+│   │   ├── ApiError.js
+│   │   └── asyncHandler.js
+│   │
+│   ├── app.js
+│   └── server.js
+│
+├── uploads/
+│   ├── image1.jpg
+│   └── image2.jpg
+│
+├── .env
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── API_DOCUMENTATION.md
+└── README.md
